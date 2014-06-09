@@ -1,0 +1,21 @@
+<!--extend from base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+<h1>People Union</h1>
+<form action="" method="post" name="people">
+	{{form.hidden_tag()}}
+	<p>
+		Please enter a person id: <br>
+		{{form.personid(size=80)}} <br>
+		{% for error in form.errors.personid %}
+		<span style="color: red;">[{{error}}]</span>
+		{% endfor %}<br>
+	</p>
+	<p><input type="submit" value="Search"></p>
+	
+</form>
+
+<h1>Search Results</h1>
+
+{% endblock %}
